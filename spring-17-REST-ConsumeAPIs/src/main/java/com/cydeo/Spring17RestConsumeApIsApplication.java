@@ -2,6 +2,8 @@ package com.cydeo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class Spring17RestConsumeApIsApplication {
@@ -10,4 +12,8 @@ public class Spring17RestConsumeApIsApplication {
         SpringApplication.run(Spring17RestConsumeApIsApplication.class, args);
     }
 
+    @Bean
+    public RestTemplate restTemplate(){
+        return new RestTemplate();
+    }
 }
