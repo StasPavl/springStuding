@@ -42,7 +42,7 @@ public class UserController {
                 produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     @Operation(summary = "Create a User")
     @ApiResponse(responseCode = "201", description = "User created successfully (CREATED)",
-    content = {@Content(mediaType = "application/xml"), @Content(mediaType = "application/json")},
+            content = {@Content(mediaType = "application/xml"), @Content(mediaType = "application/json")},
             headers = {@Header(name = "Connection", description = "keep-alive")}
 
     )
