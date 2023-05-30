@@ -15,6 +15,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/accounts")
+@Tag(name = "Account", description = "Account Operation")
+
 public class AccountController {
 
     private final AccountService accountService;
@@ -24,11 +26,13 @@ public class AccountController {
     }
 
     @GetMapping("/list")
+    @Operation(summary = "Read all Accounts")
     public ResponseEntity<List<AccountDTO>> getAllAccounts() {
         return ResponseEntity.ok(accountService.getAccounts());
     }
 
     @GetMapping
+    @Operation(summary = "Read accounts by ID")
     public ResponseEntity<AccountDTO> getById(@RequestParam("id") Long id) throws Exception {
         return ResponseEntity.ok(accountService.getById(id));
     }
